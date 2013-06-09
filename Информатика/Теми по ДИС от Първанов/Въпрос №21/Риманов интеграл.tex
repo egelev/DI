@@ -1,0 +1,168 @@
+%class
+\documentclass[11pt,a4paper]{article}
+%\documentclass[a4paper,twocolumn]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[bulgarian]{babel}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{amsmath,amsthm,amsfonts}
+\NeedsTeXFormat{LaTeX2e}
+\usepackage{floatflt,epsfig,makeidx}
+%\usepackage[english]{babel}
+
+%\documentclass[a4paper,twocolumn]{article}
+%\documentclass[a4paper]{article}
+%packages
+%\input{bgpack}
+%page
+\textwidth 17.5cm \columnwidth 8cm  \textheight 25.7cm%26.7cm
+\oddsidemargin -1cm \evensidemargin -1cm \topmargin -60pt%-70pt
+
+
+
+
+
+\newcommand{\m  }[1]{\left| #1 \right| }
+\newcommand{\nm }[1]{\left|\left| #1 \right|\right| }
+\renewcommand{\f  }[2]{\frac{ #1 }{ #2 }}
+%\newcommand{\dfrac  }[2]{{\displaystyle \frac{ #1 }{ #2 }}}
+\newcommand{\sprod}[2]{\left\langle #1,#2 \right\rangle}
+
+\newcommand{\bc }[1]{\left( #1 \right) }
+\newcommand{\qbc}[1]{\left[ #1 \right] }
+\renewcommand{\r  }[1]{\left\{ #1 \right\} }
+\newcommand{\ov }[2]{{ #1 \choose #2 }}
+
+\newcommand{\bq}[1]{\left[ #1 \right] }
+\font\col=msbm10 scaled \magstep1
+\newcommand{\R}{\mbox{\col R}}
+\newcommand{\Q}{\mbox{\col Q}}
+\renewcommand{\C}{\mbox{\col C}}
+\newcommand{\N}{\mbox{\col N}}
+\newcommand{\Z}{\mbox{\col Z}}
+
+\newcommand{\q}{\mbox{\cl Q}}
+\newcommand{\cm}{\mbox{\cl C}}
+\newcommand{\nn}{\mbox{\cl N}}
+
+
+\newcommand{\bs  }[1]{\left\{ #1 \right\} }
+\newcommand{\ds }[1]{{\displaystyle #1}}
+
+\newcommand{\oo }[1]{\left( #1 \right)}
+\newcommand{\co }[1]{\left[ #1 \right)}
+\newcommand{\oc }[1]{\left( #1 \right]}
+\newcommand{\cc }[1]{\left[ #1 \right]}
+
+\def\tolim{\mathop{\longrightarrow}}
+\def\tg{\mathop{{\rm tg}}}
+\def\arctg{\mathop{{\rm arctg}}}
+\def\ctg{\mathop{{\rm ctg}}}
+
+\newcommand{\sm }{\setminus}
+\newcommand{\ml }{\times}
+\newcommand{\mt}{\longmapsto}
+
+\newcommand{\trcode}[2]{{}_{#1}\overline{0.#2}}
+
+\newcommand{\ep }{\varepsilon}
+\newcommand{\e }{\varepsilon}
+\newcommand{\ld}{\lambda}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\dt}{\delta}
+\newcommand{\Dt}{\Delta}
+\newcommand{\sg}{\sigma}
+\newcommand{\Sg}{\Sigma}
+\newcommand{\gm}{\gamma}
+\newcommand{\Gm}{\Gamma}
+\newcommand{\glet}[1]{\mbox{\tt #1}}
+\newcommand{\enph}{$ \bigtriangledown $}
+\newcommand{\enpr}{\hfill \rule{.1 in}{.1 in}}
+\renewcommand{\Box}{\hfill \rule{.1 in}{.1 in}}
+\newcommand{\blet}[1]{\mbox{\col #1}}
+
+\newcommand{\ikr}{\char'32}
+\newcommand{\Ikr}{\char'22}
+
+
+
+
+
+\font\setfnt=msbm10
+\newcommand{\slet}[1]{\mbox{\setfnt #1}}
+
+\newcommand{\dint}{\int\!\!\!\int}
+\newcommand{\trint}{\int\!\!\!\int\!\!\!\int}
+\newcommand{\mint}{\int\!\!\!\ldots\int}
+\unitlength=1mm
+
+
+\newcommand{\sq}{\begin{picture}(1.50,1.50)(0.00,0.00)
+                 \put(0.75,0){\rule{1.50\unitlength}{1.50\unitlength}}
+                 \end{picture}}
+
+\tolerance 4000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+%
+
+%
+\centerline{\bf 21. Определен интеграл. Дефиниция и свойства. Интегруемост на}
+ \centerline{ \bf непрекъснатите функции. Теорема на Нютон - Лайбниц.}
+%\author{}
+%\date{}
+
+%\pagestyle{empty}
+%\small
+%\maketitle
+%между двата надписа пиши каквото трябва%
+%\centerline{\bf Изпит по МА-2, поправка(теория)}
+%\centerline{\bf специалности "Физика" и "ККТФ"}
+%\centerline{\bf 1-ви курс, редовно обучение}
+%\centerline{\bf 02.09.2012 година}\vspace{0.6cm}
+
+%{\large\bf Име:} \hspace{9cm}{\large\bf фак. номер:}
+
+
+\vskip 1.5 cm
+
+
+
+
+\centerline{\bf 1.Определени интеграли - дефиниция и свойства.}
+\input rint
+
+
+\centerline{\bf 2.Свойства на определените интеграли.}
+\input rswo
+
+
+\centerline{\bf 3. Пресмятане на определените интеграли.}
+\input rizint
+
+
+
+
+
+
+
+%между двата надписа пиши каквото трябва
+\end{document}
