@@ -14,6 +14,28 @@ DLList::~DLList() {
   start = end = forwardIter = backwardIter = NULL;
 }
 
+DLList::DLList(DLList const & dl) {
+  node* current;
+  current = dl.start;
+
+  while((current= current->next) != NULL) {
+    insertAfter(nextForward(), current->data);
+  }
+}
+
+DLList& DLList::operator=(DLList const & dl) {
+
+	node *current = dl.start;
+
+	while(current) {
+
+		insertAfter(current, current->data);
+		current = current->next;
+	}
+
+	return *this;
+}
+
 void DLList::deleteElem(node* p, double& x) {
   x = p->data;
   if(p == forwardIter) {
@@ -56,7 +78,6 @@ void DLList::insertAfter(node* p, double x) {
       start = new node();
       start->data = x;
       end = start;
-      printf("forwardIter = %d , backwardIter  = %d, end  = %d, start  = %d\n", forwardIter , backwardIter , end , start);
     } else {
       tmp = start;
       start = new node();
@@ -83,13 +104,36 @@ void DLList::insertAfter(node* p, double x) {
   }
 }
 
-DLList::DLList(DLList const & dl) {
-  // dl.startForward();
-  node* current, *iter;
-  current = dl.start;
+void DLList::insertBefore(node* p, double x) {
+  node* tmp;
+  if(p == NULL) {
+    if(start == NULL) {
+      start = new node();
+      start->data = x;
+      end = start;
+    } else {
+      tmp = end;
+      end = new node();
+      end->data = x;
+      start->next = tmp;
+      tmp->prev = start;
+    }
+  } else {
+    if(p->next == NULL) {
+      p->next = new node();
+      p->next->prev = p;
+      p->next->data = x;
+      end = p->next;
+    } else {
+      tmp = new node();
+      tmp->data = x;
 
-  while((current= current->next) != NULL) {
-    insertAfter(nextForward(), current->data);
+      tmp->next = p->next;
+      p->next->prev = tmp;
+
+      tmp->prev = p;
+      p->next = tmp;
+    }
   }
 }
 
@@ -128,4 +172,3 @@ node* DLList::nextBackward() {
     return current;
   }
 }
-

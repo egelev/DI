@@ -1,17 +1,17 @@
-CC=g++
+CXX=g++
 BIN_PATH=./bin
-CFLAGS=-I. -g -O0 -Wall -Wextra
+CXXFLAGS=-I. -g -O0 -Wall -Wextra
 
 dllist.o:
-	$(CC) -c dllist.cpp -o $(BIN_PATH)/dllist.o $(CFLAGS)
+	$(CXX) -c dllist.cpp -o $(BIN_PATH)/dllist.o $(CXXFLAGS)
 
 test: dllist.o
-	$(CC) -o $(BIN_PATH)/dllist_test $(BIN_PATH)/dllist.o dllist_test.cpp
+	$(CXX) -o $(BIN_PATH)/dllist_test $(BIN_PATH)/dllist.o dllist_test.cpp
 
 dllist_bin: dllist.o
-	$(CC) -o $(BIN_PATH)/dllist.bin $(BIN_PATH)/dllist.o dllist_bin.cpp $(CFLAGS)
+	$(CXX) -o $(BIN_PATH)/dllist.bin $(BIN_PATH)/dllist.o dllist_bin.cpp $(CXXFLAGS)
 
-debug: CFLAGS += -g -O0 -Wall -Wextra
+debug: CXXFLAGS += -g -O0 -Wall -Wextra
 debug: dllist_bin
 
 all: dllist_bin
