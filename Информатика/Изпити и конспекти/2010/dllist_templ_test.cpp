@@ -1,5 +1,5 @@
 #include <cstdio>
-#include "dllist_templ.h"
+#include "dllist_templ.hpp"
 
 int main() {
 	double elems[] = {1, 2, 5, 6, 10};
