@@ -72,29 +72,23 @@ void DLList::deleteElem(node* p, double& x) {
 }
 
 void DLList::insertAfter(node* p, double x) {
-  node* tmp;
+  node* tmp = new node();
+  tmp->data = x;
   if(p == NULL) {
     if(start == NULL) {
-      start = new node();
-      start->data = x;
+      start = tmp;
       end = start;
     } else {
-      tmp = start;
-      start = new node();
-      start->data = x;
-      start->next = tmp;
-      tmp->prev = start;
+      tmp->next = start;
+      start->prev = tmp;
+      start = tmp;
     }
   } else {
     if(p->next == NULL) {
-      p->next = new node();
-      p->next->prev = p;
-      p->next->data = x;
-      end = p->next;
+      p->next = tmp;
+      tmp->prev = p;
+      end = tmp;
     } else {
-      tmp = new node();
-      tmp->data = x;
-      
       tmp->next = p->next;
       p->next->prev = tmp;
 
@@ -105,34 +99,28 @@ void DLList::insertAfter(node* p, double x) {
 }
 
 void DLList::insertBefore(node* p, double x) {
-  node* tmp;
+  node* tmp = new node();
+  tmp->data = x;
   if(p == NULL) {
-    if(start == NULL) {
-      start = new node();
-      start->data = x;
-      end = start;
+    if(end == NULL) {
+      end = tmp;
+      start = end;
     } else {
-      tmp = end;
-      end = new node();
-      end->data = x;
-      start->next = tmp;
-      tmp->prev = start;
+      tmp->prev = end;
+      end->next = tmp;
+      end = tmp;
     }
   } else {
-    if(p->next == NULL) {
-      p->next = new node();
-      p->next->prev = p;
-      p->next->data = x;
-      end = p->next;
+    if(p->prev == NULL) {
+      p->prev = tmp;
+      tmp->next = p;
+      start = tmp;
     } else {
-      tmp = new node();
-      tmp->data = x;
+      tmp->prev = p->prev;
+      p->prev->next = tmp;
 
-      tmp->next = p->next;
-      p->next->prev = tmp;
-
-      tmp->prev = p;
-      p->next = tmp;
+      tmp->next = p;
+      p->prev = tmp;
     }
   }
 }
@@ -154,7 +142,7 @@ void DLList::startBackward(node* p) {
 }
 
 node* DLList::nextForward() {
-  if(start == NULL) {
+  if(forwardIter == NULL) {
     return NULL;
   } else {
     node* current = forwardIter;
@@ -164,7 +152,7 @@ node* DLList::nextForward() {
 }
 
 node* DLList::nextBackward() {
-  if(start == NULL) {
+  if(backwardIter == NULL) {
     return NULL;
   } else {
     node* current = backwardIter;
