@@ -11,6 +11,14 @@ test: dllist.o
 dllist_bin: dllist.o
 	$(CXX) -o $(BIN_PATH)/dllist.bin $(BIN_PATH)/dllist.o dllist_bin.cpp $(CXXFLAGS)
 
+
+dllist_templ.o:
+	$(CXX) -c dllist_templ.cpp -o $(BIN_PATH)/dllist_templ.o $(CXXFLAGS)
+
+dllist_test: dllist_templ.o
+	$(CXX) -o $(BIN_PATH)/dllist_templ.bin $(BIN_PATH)/dllist_templ.o dllist_templ_test.cpp $(CXXFLAGS)
+
+
 debug: CXXFLAGS += -g -O0 -Wall -Wextra
 debug: dllist_bin
 
