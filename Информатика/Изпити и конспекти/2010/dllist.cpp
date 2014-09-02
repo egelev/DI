@@ -24,9 +24,12 @@ DLList::DLList(DLList const & dl) {
 }
 
 DLList& DLList::operator=(DLList const & dl) {
+	double tmp;
+	while(start) {
+		deleteElem(start, tmp);
+	}
 
 	node *current = dl.start;
-
 	while(current) {
 
 		insertAfter(current, current->data);
