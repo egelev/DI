@@ -24,12 +24,12 @@ public:
   DLList<T>& operator=(DLList<T> const&);
   ~DLList();
   // вмъква числото x пред елемента, сочен от p
-  void insertBefore(LElem<T>* p, double x);
+  void insertBefore(LElem<T>* p, T x);
   // вмъква числото x след елемента, сочен от p
-  void insertAfter(LElem<T>* p, double x);
+  void insertAfter(LElem<T>* p, T x);
   // изтрива елемента, сочен от p от списъка
   // и го записва в x
-  void deleteElem(LElem<T>* p, double& x);
+  void deleteElem(LElem<T>* p, T& x);
   // установява forwardIter да сочи към началото на списъка
   // или към елемента, сочен от p, ако за p е зададена
   // ненулева стойност

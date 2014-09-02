@@ -47,7 +47,7 @@ DLList<T>& DLList<T>::operator=(DLList<T> const & dl) {
 }
 
 template <typename T>
-void DLList<T>::deleteElem(LElem<T>* p, double& x) {
+void DLList<T>::deleteElem(LElem<T>* p, T & x) {
   x = p->data;
   if(p == forwardIter) {
     forwardIter = start;
@@ -83,7 +83,7 @@ void DLList<T>::deleteElem(LElem<T>* p, double& x) {
 }
 
 template <typename T>
-void DLList<T>::insertAfter(LElem<T>* p, double x) {
+void DLList<T>::insertAfter(LElem<T>* p, T x) {
   LElem<T>* tmp = new LElem<T>();
   tmp->data = x;
   if(p == NULL) {
@@ -111,7 +111,7 @@ void DLList<T>::insertAfter(LElem<T>* p, double x) {
 }
 
 template <typename T>
-void DLList<T>::insertBefore(LElem<T>* p, double x) {
+void DLList<T>::insertBefore(LElem<T>* p, T x) {
   LElem<T>* tmp = new LElem<T>();
   tmp->data = x;
   if(p == NULL) {
