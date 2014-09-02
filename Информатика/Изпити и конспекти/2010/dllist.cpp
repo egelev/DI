@@ -24,6 +24,10 @@ DLList::DLList(DLList const & dl) {
 }
 
 DLList& DLList::operator=(DLList const & dl) {
+	if(&dl == this) {
+		return *this;
+	}
+
 	double tmp;
 	while(start) {
 		deleteElem(start, tmp);
@@ -31,7 +35,6 @@ DLList& DLList::operator=(DLList const & dl) {
 
 	node *current = dl.start;
 	while(current) {
-
 		insertAfter(current, current->data);
 		current = current->next;
 	}
